@@ -1,10 +1,10 @@
 /*Contenedor flexible*/
-@mixin flex($dis, $direccion, $corte, $just, $align, $separacion) {
+@mixin flex($dis, $just, $align, $mar, $pad) {
   display: $dis;
-  flex-flow: $direccion $corte;
   justify-content: $just;
   align-items: $align;
-  gap: $separacion;
+  margin: $mar;
+  padding: $pad;
 }
 @mixin tarjeta($ancho, $alto) {
   width: $ancho;

@@ -1,0 +1,36 @@
+@use "../utilities/utilities" as utils;
+
+.item_list_container {
+  @include utils.flex(flex, center, center, 0, 0.5em);
+  flex-direction: column;
+}
+.saludo {
+  @include utils.flex(flex, space-between, center, 0, 0);
+  width: 90vw;
+}
+.frase {
+  color: utils.$text-accent;
+  font-size: 1.5em;
+}
+.container {
+  @include utils.flex(flex, space-between, center, 0, 0);
+  width: 90%;
+}
+.list_container {
+  @include utils.flex(flex, space-between, center, 0, 0);
+  width: 100%;
+}
+.item {
+  @include utils.tarjeta(250px, 400px);
+  text-align: center;
+  list-style: none;
+}
+.item_img {
+  @include utils.img(100%, 350px, cover, none, 0);
+  border: solid 5px utils.$text-secondary;
+  border-radius: 5px;
+}
+.title {
+  color: utils.$text-primary;
+  font-size: 1.4em;
+}

@@ -1,10 +1,11 @@
 @use "../utilities/utilities" as utils;
 
 .menu {
-  @include utils.flex(flex, row, nowrap, space-between, center, 0);
-  list-style-type: none;
-  padding: 0.5em;
-  font-size: 1.2em;
+  @include utils.flex(flex, space-between, center, 0, 0.5em);
+  list-style: none;
+  font-size: 1.3em;
+  padding-right: 5em;
+  border-bottom: solid 1px utils.$text-primary;
 }
 
 .menu_img {
@@ -15,6 +16,7 @@
   text-decoration: none;
 }
 .menu_inicio {
-  color: utils.$text-primary;
+  color: utils.$text-secondary;
+  font-size: 1.5em;
   text-decoration: none;
 }
