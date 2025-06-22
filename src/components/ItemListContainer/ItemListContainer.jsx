@@ -1,11 +1,44 @@
-export function ItemListContainer({ greeting }) {
-  greeting = "¡Bienvenido a nuestra tienda de películas y series!";
-
+export function ItemListContainer({ nombre }) {
   return (
-    <div className="item-list-container">
-      <h2>{greeting}</h2>
-      <p>Explora nuestra colección de películas y series.</p>
-      {/* Aquí podrías agregar más contenido, como una lista de productos */}
+    <div className="item_list_container">
+      <div className="saludo">
+        <h1>Cinéfil@ {nombre}</h1>
+        <p className="frase">
+          Explora nuestra colección de películas y series.
+        </p>
+      </div>
+      <div className="container">
+        <ul className="list_container">
+          <li className="item">
+            <img
+              className="item_img"
+              src="https://res.cloudinary.com/dv9yjyclh/image/upload/v1750607421/amatheur_ruxc95.jpg"
+            />
+            <p className="title">The Amatheur</p>
+          </li>
+          <li className="item">
+            <img
+              className="item_img"
+              src="https://res.cloudinary.com/dv9yjyclh/image/upload/v1750607420/candle_npwrv5.jpg"
+            />
+            <p className="title">Candle in the Tomb</p>
+          </li>
+          <li className="item">
+            <img
+              className="item_img"
+              src="https://res.cloudinary.com/dv9yjyclh/image/upload/v1750607421/dragon_mjyku5.jpg"
+            />
+            <p className="title">Dragon</p>
+          </li>
+          <li className="item">
+            <img
+              className="item_img"
+              src="https://res.cloudinary.com/dv9yjyclh/image/upload/v1750607421/lilo_dgkml8.jpg"
+            />
+            <p className="title"> Lilo & Stitch</p>
+          </li>
+        </ul>
+      </div>
     </div>
   );
 }

@@ -1,0 +1,27 @@
+/*Contenedor flexible*/
+@mixin flex($dis, $just, $align, $mar, $pad) {
+  display: $dis;
+  justify-content: $just;
+  align-items: $align;
+  margin: $mar;
+  padding: $pad;
+}
+@mixin tarjeta($ancho, $alto) {
+  width: $ancho;
+  height: $alto;
+}
+/*Configuracion general de img*/
+@mixin img($ancho, $alto, $cover, $sombra, $margen) {
+  width: $ancho;
+  height: $alto;
+  object-fit: $cover;
+  box-shadow: $sombra;
+  margin-bottom: $margen;
+}
+/*Configuración para aplicar neumorfismo en caso de usarlo*/
+@mixin neo($bg, $b_radio, $eje) {
+  background-color: $bg;
+  border-radius: $b_radio;
+  box-shadow: inset $eje $eje ($eje * 2) #040404,
+    inset (-$eje) (-$eje) ($eje * 2) #222020;
+}
