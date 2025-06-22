@@ -1,0 +1,20 @@
+@use "../utilities/utilities" as utils;
+
+.menu {
+  @include utils.flex(flex, row, nowrap, space-between, center, 0);
+  list-style-type: none;
+  padding: 0.5em;
+  font-size: 1.2em;
+}
+
+.menu_img {
+  @include utils.img(200px, 50px, cover, none, 0);
+}
+.menu_link {
+  color: utils.$text-tertiary;
+  text-decoration: none;
+}
+.menu_inicio {
+  color: utils.$text-primary;
+  text-decoration: none;
+}

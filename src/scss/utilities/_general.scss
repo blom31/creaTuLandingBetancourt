@@ -1,0 +1,19 @@
+@use "./variables" as v;
+
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background-color: v.$bg-color;
+  font-family: "Oswald", sans-serif;
+}
+h1 {
+  font-size: 2rem;
+  color: v.$text-fourth;
+  margin-left: 1em;
+}
+
+p {
+  color: v.$text-secondary;
+  font-size: 1.5em;
+}

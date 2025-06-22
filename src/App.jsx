@@ -1,6 +1,6 @@
 import { NavBar } from "./components/NavBar/NavBar.jsx";
 import { ItemListContainer } from "./components/ItemListContainer/ItemListContainer.jsx";
-import "./App.css";
+import "./css/styles.css";
 
 const name = "Olga";
 function App() {
