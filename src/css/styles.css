@@ -46,6 +46,11 @@ h1 {
   text-decoration: none;
 }
 
+.cart_widget {
+  color: #e6cc0b;
+  font-size: 1.1em;
+}
+
 .item_list_container {
   display: flex;
   justify-content: center;
@@ -53,6 +58,7 @@ h1 {
   margin: 0;
   padding: 0.5em;
   flex-direction: column;
+  height: 90vh;
 }
 
 .saludo {
@@ -65,7 +71,7 @@ h1 {
 }
 
 .frase {
-  color: #294fb6;
+  color: #2459ec;
   font-size: 1.5em;
 }
 
@@ -107,6 +113,16 @@ h1 {
 .title {
   color: #f5f5f5;
   font-size: 1.4em;
+}
+
+.footer_content {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin: 0;
+  padding: 0.5em;
+  color: #2459ec;
+  border-top: 1px solid #f5f5f5;
 }
 
 /*# sourceMappingURL=styles.css.map */

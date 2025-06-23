@@ -1,11 +1,9 @@
-export function ItemListContainer({ nombre }) {
+export function ItemListContainer({ greet }) {
   return (
     <div className="item_list_container">
       <div className="saludo">
-        <h1>Cinéfil@ {nombre}</h1>
-        <p className="frase">
-          Explora nuestra colección de películas y series.
-        </p>
+        <h1>{greet}</h1>
+        <p className="frase"></p>
       </div>
       <div className="container">
         <ul className="list_container">

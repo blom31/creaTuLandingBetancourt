@@ -3,6 +3,7 @@
 .item_list_container {
   @include utils.flex(flex, center, center, 0, 0.5em);
   flex-direction: column;
+  height: 90vh;
 }
 .saludo {
   @include utils.flex(flex, space-between, center, 0, 0);
