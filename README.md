@@ -25,19 +25,26 @@ Contiene:
 Muestra un ícono de carrito (🛒) con una cantidad fija (3).
 
 ### 🔹 `ItemListContainer`
-Recibe un mensaje a través de props (`greeting`) y lo muestra como bienvenida al usuario.
-Se simula una contenedor de productos (`Películas`)
+Recibe un mensaje a través de props (`greeting`) y lo muestra como bienvenida al usuario y
+se simula una contenedor de productos (`Películas`)
 
 ---
 
 ## 📁 Estructura del proyecto
 src/
+
 ├── components/
+
 │ ├── CartWidget.jsx
+
 │ ├── ItemListContainer.jsx
+
 │ └── NavBar.jsx
+
 ├── App.jsx
+
 └── main.jsx
+
 
 
 ## 🛠️ Tecnologías utilizadas
