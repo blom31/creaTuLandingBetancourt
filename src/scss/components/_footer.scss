@@ -1,0 +1,7 @@
+@use "../utilities/utilities" as utils;
+
+.footer_content {
+  @include utils.flex(flex, space-around, center, 0, 0.5em);
+  color: utils.$text-accent;
+  border-top: 1px solid utils.$text-primary;
+}

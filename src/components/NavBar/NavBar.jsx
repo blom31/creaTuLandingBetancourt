@@ -1,4 +1,4 @@
-// import "../CartWidget/CartWidget";
+import { CartWidget } from "../CartWidget/CartWidget";
 
 export function NavBar() {
   return (
@@ -29,12 +29,14 @@ export function NavBar() {
             </a>
           </li>
           <li>
-            <a className="menu_link" href="/contacto">
-              Contacto
+            <a className="menu_link" href="/ingresar">
+              👤Ingresar
             </a>
           </li>
+          <li>
+            <CartWidget />
+          </li>
         </ul>
-        {/* <CartWidget /> */}
       </nav>
     </>
   );
