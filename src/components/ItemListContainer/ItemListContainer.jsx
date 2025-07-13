@@ -1,3 +1,6 @@
+import { useState } from "react";
+
+// const [peliculas, setPeliculas] = useState([]);
 export function ItemListContainer({ greet }) {
   return (
     <div className="item_list_container">
