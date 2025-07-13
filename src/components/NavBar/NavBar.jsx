@@ -11,7 +11,6 @@ export function NavBar() {
             src="https://res.cloudinary.com/dv9yjyclh/image/upload/v1750554951/entrada_ufzx1i.png"
           />
         </NavLink>
-
         <NavLink to="/" className="menu_inicio">
           Inicio
         </NavLink>
