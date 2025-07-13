@@ -1,44 +1,47 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
+// import { useParams } from "react-router-dom";
+import { getPeliculas } from "../../fetchApi";
 
-// const [peliculas, setPeliculas] = useState([]);
 export function ItemListContainer({ greet }) {
+  const [peliculas, setPeliculas] = useState([]);
+
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    getPeliculas()
+      .then((data) => {
+        setPeliculas(data);
+      })
+      .catch((error) => {
+        console.error("Error en el componente:", error);
+      })
+      .finally(() => {
+        setLoading(false);
+      });
+  }, []);
+  if (loading) {
+    return <h3>Cargando...</h3>;
+  }
+
   return (
     <div className="item_list_container">
       <div className="saludo">
         <h1>{greet}</h1>
-        <p className="frase"></p>
       </div>
       <div className="container">
-        <ul className="list_container">
-          <li className="item">
-            <img
-              className="item_img"
-              src="https://res.cloudinary.com/dv9yjyclh/image/upload/v1750607421/amatheur_ruxc95.jpg"
-            />
-            <p className="title">The Amatheur</p>
-          </li>
-          <li className="item">
-            <img
-              className="item_img"
-              src="https://res.cloudinary.com/dv9yjyclh/image/upload/v1750607420/candle_npwrv5.jpg"
-            />
-            <p className="title">Candle in the Tomb</p>
-          </li>
-          <li className="item">
-            <img
-              className="item_img"
-              src="https://res.cloudinary.com/dv9yjyclh/image/upload/v1750607421/dragon_mjyku5.jpg"
-            />
-            <p className="title">Dragon</p>
-          </li>
-          <li className="item">
-            <img
-              className="item_img"
-              src="https://res.cloudinary.com/dv9yjyclh/image/upload/v1750607421/lilo_dgkml8.jpg"
-            />
-            <p className="title"> Lilo & Stitch</p>
-          </li>
-        </ul>
+        <div className="list_container">
+          {peliculas.map((pelicula) => (
+            <div className="item" key={pelicula.id}>
+              <img
+                className="item_img"
+                src={`https://image.tmdb.org/t/p/w500${pelicula.poster_path}`}
+                alt={pelicula.title}
+              />
+              <p className="title">{pelicula.title}</p>
+            </div>
+          ))}
+          {/* Placeholder for additional items */}
+        </div>
       </div>
     </div>
   );
