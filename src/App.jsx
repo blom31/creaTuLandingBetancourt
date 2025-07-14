@@ -14,7 +14,10 @@ function App() {
         {/*ruta raiz Muestsra todos las peliculas*/}
         <Route path="/" element={<ItemListContainer greet={saludar} />} />
         {/*Ruta de categorías reutiliza el itemlistcontainer*/}
-        <Route path="/category/:categoryId" element={<ItemListContainer />} />
+        <Route
+          path="/categoria/:categoriaId"
+          element={<ItemListContainer greet={saludar} />}
+        />
 
         {/*Ruta de detalle de producto que se pasa el id de la peli y se usa en detailcontainer*/}
         <Route path="/item/:itemId" element={<ItemDetailContainer />} />
