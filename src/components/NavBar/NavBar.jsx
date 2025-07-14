@@ -14,10 +14,10 @@ export function NavBar() {
         <NavLink to="/" className="menu_inicio">
           Inicio
         </NavLink>
-        <NavLink to="/peliculas" className="menu_link">
+        <NavLink to="/categoria/peliculas" className="menu_link">
           Películas
         </NavLink>
-        <NavLink to="/series" className="menu_link">
+        <NavLink to="/categoria/series" className="menu_link">
           Series
         </NavLink>
         <NavLink to="/ingresar" className="menu_link">
