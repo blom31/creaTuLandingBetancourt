@@ -8,24 +8,32 @@
   @include utils.flex(flex, space-between, center, 0, 0);
   width: 90vw;
 }
-.frase {
+.buscar {
+  @include utils.flex(flex, space-evenly, center, 0, 0);
   color: utils.$text-accent;
-  font-size: 1.5em;
+  width: 25%;
+  font-size: 1.3em;
+}
+.buscar input {
+  width: 65%;
+  border-radius: 5px;
 }
 .container {
   @include utils.flex(flex, space-between, center, 0, 0);
-  width: 90%;
+  width: 100%;
+  flex-direction: column;
 }
 .list_container {
   @include utils.flex(flex, space-evenly, center, 0, 0);
-  width: 95%;
+  width: 100%;
   height: auto;
   flex-wrap: wrap;
 }
 .item {
-  @include utils.tarjeta(200px, 350px);
+  @include utils.tarjeta(250px, 450px);
   text-align: center;
-  margin: 15px;
+  margin: 10px;
+  text-decoration: none;
 }
 .item_img {
   @include utils.img(100%, 80%, cover, none, 0);
@@ -34,5 +42,5 @@
 }
 .title {
   color: utils.$text-primary;
-  font-size: 1.4em;
+  font-size: 1.5em;
 }

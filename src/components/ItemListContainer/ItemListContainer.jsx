@@ -4,7 +4,7 @@ import { getPeliculas } from "../../fetchApi";
 import { ItemList } from "../ItemList/ItemList";
 
 export function ItemListContainer({ greet }) {
-  const { categoriaId } = useParams(); // Ahora esperamos "series" o "peliculas"
+  const { categoriaId } = useParams();
   const [peliculas, setPeliculas] = useState([]);
   const [loading, setLoading] = useState(true);
 
@@ -13,7 +13,6 @@ export function ItemListContainer({ greet }) {
 
     getPeliculas()
       .then((data) => {
-        // Filtramos según la categoría artificial que vos generaste
         const filtradas = categoriaId
           ? data.filter((p) => p.categoria === categoriaId)
           : data;
@@ -31,8 +30,7 @@ export function ItemListContainer({ greet }) {
 
   return (
     <div className="item_list_container">
-      <div className="saludo"></div>
-      <ItemList peliculas={peliculas} />
+      <ItemList peliculas={peliculas} greet={greet} />
     </div>
   );
 }
