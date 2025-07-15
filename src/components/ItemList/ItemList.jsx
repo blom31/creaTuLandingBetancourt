@@ -1,7 +1,6 @@
-import { Item } from "../Item/Item"; // Importamos el componente para cada item individual
+import { Item } from "../Item/Item";
 
-// Este componente solo se encarga de la presentación de la lista.
-export function ItemList({ peliculas }) {
+export function ItemList({ peliculas, greet }) {
   if (!peliculas || peliculas.length === 0) {
     return (
       <div className="itemlist-container">
@@ -12,9 +11,15 @@ export function ItemList({ peliculas }) {
 
   return (
     <div className="container">
+      <div className="saludo">
+        <h1>{greet}</h1>
+        <div className="buscar">
+          <label htmlFor="">Buscar</label>
+          <input type="text" name="buscar" />
+        </div>
+      </div>
       <div className="list_container">
         {peliculas.map((pelicula) => (
-          // Por cada película, renderizamos un componente Item
           <Item key={pelicula.id} pelicula={pelicula} />
         ))}
       </div>

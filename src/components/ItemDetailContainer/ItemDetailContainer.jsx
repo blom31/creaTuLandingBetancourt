@@ -1,6 +1,6 @@
 import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
-import { getPeliculas } from "../../fetchApi"; // Asegurate que esto devuelva un array
+import { getPeliculas } from "../../fetchApi";
 import { ItemDetail } from "../ItemDetail/ItemDetail";
 
 export function ItemDetailContainer() {
