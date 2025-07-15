@@ -1,0 +1,27 @@
+@use "../utilities/utilities" as utils;
+
+.item_detail {
+  @include utils.flex(flex, center, center, 0, 0);
+  width: 100%;
+  margin: 1.5em;
+}
+.item_img_container {
+  @include utils.flex(flex, center, center, 0, 0);
+  width: 30%;
+}
+.item_detail_img {
+  @include utils.img(70%, 80%, cover, none, 0);
+  border: solid 5px utils.$text-accent;
+  border-radius: 5px;
+}
+.item_info {
+  @include utils.flex(flex, center, center, 0, 0);
+  flex-direction: column;
+  width: 65%;
+  padding: 1em;
+  color: utils.$text-primary;
+  font-size: 1.3em;
+}
+.item_info p strong {
+  color: utils.$text-fourth;
+}
