@@ -34,24 +34,25 @@ se simula una contenedor de productos (`Películas`)
 src/
 
 ├── components/
-│
-│   ├── CartWidget/
-│       └──CartWidget.jsx
-│   ├──Footer/
-│       └──Footer.jsx
-│    ├── Item/
-│        └──Item.jsx
-│   ├── ItemDetail/
-│        └──ItemDetail.jsx
-│   ├── ItemDetailContainer/
-│        └──ItemDetailContainer.jsx
-│   ├── ItemList/
-│        └──ItemList.jsx
-│   ├── ItemListContainer/
-│        └──ItemListContainer.jsx
-│   ├── NavBar/
-│        └──NavBar.jsx
+
+    ├── CartWidget/
+      └──CartWidget.jsx
+    ├──Footer/
+       └──Footer.jsx
+    ├── Item/
+        └──Item.jsx
+    ├── ItemDetail/
+        └──ItemDetail.jsx
+    ├── ItemDetailContainer/
+        └──ItemDetailContainer.jsx
+    ├── ItemList/
+        └──ItemList.jsx
+    ├── ItemListContainer/
+        └──ItemListContainer.jsx
+    ├── NavBar/
+        └──NavBar.jsx
 ├── App.jsx
+
 └── main.jsx
 
 
