@@ -19,6 +19,10 @@ export function ItemDetail({ pelicula }) {
         <p>
           <strong>Categoría:</strong> {pelicula.categoria}
         </p>
+        <div className="item_actions">
+          <button className="btn-primary">Comprar ahora</button>
+          <button className="btn-primary">Agregar al carrito</button>
+        </div>
       </div>
     </div>
   );
