@@ -2,6 +2,7 @@ import { Routes, Route } from "react-router-dom";
 import { NavBar } from "./components/NavBar/NavBar.jsx";
 import { ItemListContainer } from "./components/ItemListContainer/ItemListContainer.jsx";
 import { ItemDetailContainer } from "./components/ItemDetailContainer/ItemDetailContainer.jsx";
+import { Cart } from "./components/Cart/Cart.jsx";
 import { Footer } from "./components/Footer/Footer.jsx";
 import "./css/styles.css";
 
@@ -18,6 +19,7 @@ function App() {
         />
 
         <Route path="/item/:itemId" element={<ItemDetailContainer />} />
+        <Route path="/cart" element={<Cart />} />
         <Route path="*" element={<h1>404 Not Found</h1>} />
       </Routes>
       <Footer />
