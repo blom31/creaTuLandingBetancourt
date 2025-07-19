@@ -4,7 +4,7 @@ export async function getPeliculas() {
       "https://api.themoviedb.org/3/movie/popular?api_key=a36a0107dd6b1ea8569d698315062324&language=es-ES&page=1"
     );
     if (!response.ok) {
-      throw new Error("Error al obtene las películas");
+      throw new Error("Error al obtener las películas");
     }
     const getPeliculas = await response.json();
     const peliculas = getPeliculas.results.map((pelicula) => ({
