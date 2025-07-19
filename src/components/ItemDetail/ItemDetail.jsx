@@ -1,4 +1,14 @@
+import { Plus } from "lucide-react";
+import { useContext } from "react";
+import { CartContext } from "../../provider/CartProvider";
+
 export function ItemDetail({ pelicula }) {
+  const cantidad = useContext(CartContext);
+
+  const handleClick = () => {
+    cantidad.setCantidad(cantidad.cantidad + 1);
+  };
+
   return (
     <div className="item_detail">
       <div className="item_img_container">
@@ -21,7 +31,10 @@ export function ItemDetail({ pelicula }) {
         </p>
         <div className="item_actions">
           <button className="btn-primary">Comprar ahora</button>
-          <button className="btn-primary">Agregar al carrito</button>
+          <button className="btn-primary" onClick={handleClick}>
+            <Plus />
+            Agregar al carrito
+          </button>
         </div>
       </div>
     </div>
