@@ -4,12 +4,15 @@ import { useContext } from "react";
 import { CartContext } from "../../provider/CartProvider";
 
 export function CartWidget() {
-  const result = useContext(CartContext);
+  const { totalItems } = useContext(CartContext); // Desestructurado directamente
 
-  console.log(result);
+  const itemCount = totalItems(); // Llama a la función y guarda el resultado
+
   return (
     <NavLink to="/cart" className="cart_widget ">
-      <ShoppingCart /> {result.cantidad}
+      <ShoppingCart />
+      {/* Muestra el número solo si itemCount es mayor que 0 */}
+      {itemCount > 0 && <span className="cart_item_count">{itemCount}</span>}
     </NavLink>
   );
 }
