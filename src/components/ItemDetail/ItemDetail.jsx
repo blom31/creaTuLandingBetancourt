@@ -3,10 +3,10 @@ import { useContext } from "react";
 import { CartContext } from "../../provider/CartProvider";
 
 export function ItemDetail({ pelicula }) {
-  const cantidad = useContext(CartContext);
-
-  const handleClick = () => {
-    cantidad.setCantidad(cantidad.cantidad + 1);
+  const result = useContext(CartContext);
+  console.log("Objeto pelicula en ItemDetail:", pelicula);
+  const handleOnAdd = () => {
+    result.addItem(pelicula, 1);
   };
 
   return (
@@ -29,9 +29,12 @@ export function ItemDetail({ pelicula }) {
         <p>
           <strong>Categoría:</strong> {pelicula.categoria}
         </p>
+        <p>
+          <strong>$:</strong> {pelicula.precio}
+        </p>
         <div className="item_actions">
           <button className="btn-primary">Comprar ahora</button>
-          <button className="btn-primary" onClick={handleClick}>
+          <button className="btn-primary" onClick={handleOnAdd}>
             <Plus />
             Agregar al carrito
           </button>

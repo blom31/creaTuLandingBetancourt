@@ -11,6 +11,7 @@ export function Item({ pelicula }) {
         alt={pelicula.title}
       />
       <p className="title">{pelicula.title}</p>
+      <p className="title">{pelicula.precio}</p>
     </Link>
   );
 }
