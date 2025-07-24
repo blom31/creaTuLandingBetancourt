@@ -4,6 +4,7 @@ import { ItemListContainer } from "./components/ItemListContainer/ItemListContai
 import { ItemDetailContainer } from "./components/ItemDetailContainer/ItemDetailContainer.jsx";
 import { Cart } from "./components/Cart/Cart.jsx";
 import { Footer } from "./components/Footer/Footer.jsx";
+import "./firebaseConfig.js";
 import "./css/styles.css";
 
 function App() {
