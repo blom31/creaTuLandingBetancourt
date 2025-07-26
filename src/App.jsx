@@ -4,7 +4,7 @@ import { ItemListContainer } from "./components/ItemListContainer/ItemListContai
 import { ItemDetailContainer } from "./components/ItemDetailContainer/ItemDetailContainer.jsx";
 import { Cart } from "./components/Cart/Cart.jsx";
 import { Footer } from "./components/Footer/Footer.jsx";
-import "./firebaseConfig.js";
+import { FilmUploader } from "./components/FilmUpLoader/FilmUploader.jsx";
 import "./css/styles.css";
 
 function App() {
@@ -21,6 +21,7 @@ function App() {
 
         <Route path="/item/:itemId" element={<ItemDetailContainer />} />
         <Route path="/cart" element={<Cart />} />
+        <Route path="/uploader" element={<FilmUploader />} />
         <Route path="*" element={<h1>404 Not Found</h1>} />
       </Routes>
       <Footer />

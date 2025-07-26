@@ -1,5 +1,6 @@
 import { initializeApp } from "firebase/app";
-import { getAnalytics } from "firebase/analytics";
+// ¡Necesitas importar getFirestore para interactuar con la base de datos!
+import { getFirestore } from "firebase/firestore"; // <-- ¡IMPORTANTE!
 
 const firebaseConfig = {
   apiKey: "AIzaSyCzq8_64Oidamlrf_1Ou8TOaRfz80aBhME",
@@ -12,5 +13,7 @@ const firebaseConfig = {
 };
 
 // Initialize Firebase
-const app = initializeApp(firebaseConfig);
-const analytics = getAnalytics(app);
+export const app = initializeApp(firebaseConfig);
+
+// ¡Obtener una referencia a Firestore y exportarla!
+export const db = getFirestore(app); // <-- ¡IMPORTANTE!
