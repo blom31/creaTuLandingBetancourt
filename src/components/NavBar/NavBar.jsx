@@ -20,6 +20,9 @@ export function NavBar() {
         <NavLink to="/categoria/series" className="menu_link">
           Series
         </NavLink>
+        <NavLink to="/uploader" className="menu_link">
+          Uploader
+        </NavLink>
         <NavLink to="/ingresar" className="menu_link">
           👤Ingresar
         </NavLink>

@@ -1,6 +1,6 @@
 import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
-import { getPeliculas } from "../../fetchApi";
+import { getPeliculas } from "../../services/fetchApi";
 import { ItemDetail } from "../ItemDetail/ItemDetail";
 
 export function ItemDetailContainer() {
