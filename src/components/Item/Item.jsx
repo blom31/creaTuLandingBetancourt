@@ -5,11 +5,7 @@ export function Item({ pelicula }) {
 
   return (
     <Link to={`/item/${pelicula.id}`} className="item">
-      <img
-        className="item_img"
-        src={`https://image.tmdb.org/t/p/w500${pelicula.poster_path}`}
-        alt={pelicula.title}
-      />
+      <img className="item_img" src={pelicula.poster} alt={pelicula.title} />
       <p className="title">{pelicula.title}</p>
       <p className="title">{pelicula.precio}</p>
     </Link>

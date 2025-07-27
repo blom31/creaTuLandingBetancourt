@@ -40,7 +40,7 @@ export const fetchPeliculas = () => {
           title: "Lilo y Stitch",
           vote_average: 7.297,
           poster:
-            "https://res.cloudinary.com/dv9yjyclh/image/upload/v1753491942/lilo_stitch_ghqj3b.png",
+            "https://res.cloudinary.com/dv9yjyclh/image/upload/v1753491940/lilo-stich_lqzj85.png",
           categoria: "series",
           precio: 6000,
         },

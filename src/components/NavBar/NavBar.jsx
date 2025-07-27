@@ -14,7 +14,7 @@ export function NavBar() {
         <NavLink to="/" className="menu_inicio">
           Inicio
         </NavLink>
-        <NavLink to="/categoria/peliculas" className="menu_link">
+        <NavLink to="/categoria/pelicula" className="menu_link">
           Películas
         </NavLink>
         <NavLink to="/categoria/series" className="menu_link">
