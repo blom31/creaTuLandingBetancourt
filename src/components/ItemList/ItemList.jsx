@@ -14,15 +14,15 @@ export function ItemList({ peliculas, greet }) {
       <div className="saludo">
         <h1>{greet}</h1>
         <div className="buscar">
-          <label htmlFor="">Buscar</label>
-          <input type="text" name="buscar" />
+          <label htmlFor="buscar-input">Buscar</label>
+          <input type="text" name="buscar" id="buscar-input" />
         </div>
       </div>
-      <div className="list_container">
+      <article className="list_container">
         {peliculas.map((pelicula) => (
           <Item key={pelicula.id} pelicula={pelicula} />
         ))}
-      </div>
+      </article>
     </div>
   );
 }

@@ -18,7 +18,6 @@ function App() {
           path="/categoria/:categoriaId"
           element={<ItemListContainer greet={saludar} />}
         />
-
         <Route path="/item/:itemId" element={<ItemDetailContainer />} />
         <Route path="/cart" element={<Cart />} />
         <Route path="/uploader" element={<FilmUploader />} />

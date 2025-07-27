@@ -13,7 +13,7 @@ export function ItemDetail({ pelicula }) {
     <div className="item_detail">
       <div className="item_img_container">
         <img
-          src={`https://image.tmdb.org/t/p/w500${pelicula.poster_path}`}
+          src={pelicula.poster}
           alt={pelicula.title}
           className="item_detail_img"
         />
@@ -21,7 +21,7 @@ export function ItemDetail({ pelicula }) {
       <div className="item_info">
         <h2>{pelicula.title}</h2>
         <p>
-          <strong>Descripción:</strong> {pelicula.overview || "No disponible."}
+          <strong>Descripción:</strong> {pelicula.resumen || "No disponible."}
         </p>
         <p>
           <strong>Fecha de estreno:</strong> {pelicula.release_date}
