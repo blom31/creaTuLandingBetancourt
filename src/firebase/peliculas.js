@@ -17,6 +17,7 @@ export const fetchPeliculas = () => {
             "https://res.cloudinary.com/dv9yjyclh/image/upload/v1753491942/dragon_ukpeeo.png",
           categoria: "series",
           precio: 4000,
+          stock: 4,
         },
         {
           id: 1071585,
@@ -30,6 +31,7 @@ export const fetchPeliculas = () => {
             "https://res.cloudinary.com/dv9yjyclh/image/upload/v1753491941/megan_mmgl4f.png",
           categoria: "pelicula",
           precio: 4500,
+          stock: 10,
         },
         {
           id: 552524,
@@ -43,6 +45,7 @@ export const fetchPeliculas = () => {
             "https://res.cloudinary.com/dv9yjyclh/image/upload/v1753491940/lilo-stich_lqzj85.png",
           categoria: "series",
           precio: 6000,
+          stock: 8,
         },
         {
           id: 1311031,
@@ -57,6 +60,7 @@ export const fetchPeliculas = () => {
             "https://res.cloudinary.com/dv9yjyclh/image/upload/v1753491939/guardianes_ebp8n0.png",
           categoria: "pelicula",
           precio: 8000,
+          stock: 2,
         },
         {
           id: 1315986,
@@ -70,6 +74,7 @@ export const fetchPeliculas = () => {
             "https://res.cloudinary.com/dv9yjyclh/image/upload/v1753491938/hombre-sin-memoria_c0qswo.png",
           categoria: "series",
           precio: 5000,
+          stock: 5,
         },
         {
           id: 1061474,
@@ -83,6 +88,7 @@ export const fetchPeliculas = () => {
             "https://res.cloudinary.com/dv9yjyclh/image/upload/v1753491937/superman_ftktnp.png",
           categoria: "pelicula",
           precio: 5500,
+          stock: 16,
         },
         {
           id: 1011477,
@@ -96,6 +102,7 @@ export const fetchPeliculas = () => {
             "https://res.cloudinary.com/dv9yjyclh/image/upload/v1753491937/karate-kid_zizohz.png",
           categoria: "series",
           precio: 6000,
+          stock: 12,
         },
         {
           id: 1124619,
@@ -109,6 +116,7 @@ export const fetchPeliculas = () => {
             "https://res.cloudinary.com/dv9yjyclh/image/upload/v1753491936/bride-hard_laetbg.png",
           categoria: "pelicula",
           precio: 7500,
+          stock: 8,
         },
         {
           id: 1119878,
@@ -122,6 +130,7 @@ export const fetchPeliculas = () => {
             "https://res.cloudinary.com/dv9yjyclh/image/upload/v1753491934/ice-road_o2iynd.png",
           categoria: "series",
           precio: 7000,
+          stock: 5,
         },
         {
           id: 617126,
@@ -135,6 +144,7 @@ export const fetchPeliculas = () => {
             "https://res.cloudinary.com/dv9yjyclh/image/upload/v1753491933/los-fantasticos_mkwlmf.png",
           categoria: "pelicula",
           precio: 5000,
+          stock: 15,
         },
         {
           id: 541671,
@@ -148,6 +158,7 @@ export const fetchPeliculas = () => {
             "https://res.cloudinary.com/dv9yjyclh/image/upload/v1753491932/ballerina_bybcvr.png",
           categoria: "series",
           precio: 6000,
+          stock: 8,
         },
         {
           id: 1234821,
@@ -161,6 +172,7 @@ export const fetchPeliculas = () => {
             "https://res.cloudinary.com/dv9yjyclh/image/upload/v1753491932/jurassi_ne1vnb.png",
           categoria: "pelicula",
           precio: 4000,
+          stock: 12,
         },
         {
           id: 1058537,
@@ -174,6 +186,7 @@ export const fetchPeliculas = () => {
             "https://res.cloudinary.com/dv9yjyclh/image/upload/v1753491931/angels-fallen_lpzhem.png",
           categoria: "series",
           precio: 4500,
+          stock: 15,
         },
         {
           id: 1374534,
@@ -187,6 +200,7 @@ export const fetchPeliculas = () => {
             "https://res.cloudinary.com/dv9yjyclh/image/upload/v1753491929/almost-cop_ucruh1.png",
           categoria: "pelicula",
           precio: 8000,
+          stock: 10,
         },
         {
           id: 803796,
@@ -200,6 +214,7 @@ export const fetchPeliculas = () => {
             "https://res.cloudinary.com/dv9yjyclh/image/upload/v1753491929/las-guerreras_g4dd5y.png",
           categoria: "series",
           precio: 7000,
+          stock: 8,
         },
         {
           id: 986056,
@@ -214,6 +229,7 @@ export const fetchPeliculas = () => {
             "https://res.cloudinary.com/dv9yjyclh/image/upload/v1753491929/thunderbolts_sdpjmu.png",
           categoria: "pelicula",
           precio: 7500,
+          stock: 5,
         },
         {
           id: 574475,
@@ -227,6 +243,7 @@ export const fetchPeliculas = () => {
             "https://res.cloudinary.com/dv9yjyclh/image/upload/v1753491928/destine-final_uzorly.png",
           categoria: "series",
           precio: 6000,
+          stock: 15,
         },
         {
           id: 846422,
@@ -240,6 +257,7 @@ export const fetchPeliculas = () => {
             "https://res.cloudinary.com/dv9yjyclh/image/upload/v1753491928/la-vieja-guardia_lff3zl.png",
           categoria: "pelicula",
           precio: 6500,
+          stock: 10,
         },
         {
           id: 749170,
@@ -253,6 +271,7 @@ export const fetchPeliculas = () => {
             "https://res.cloudinary.com/dv9yjyclh/image/upload/v1753491926/jefes-de-estado_qpgmrv.png",
           categoria: "series",
           precio: 4000,
+          stock: 12,
         },
         {
           id: 911430,
@@ -266,6 +285,7 @@ export const fetchPeliculas = () => {
             "https://res.cloudinary.com/dv9yjyclh/image/upload/v1753491828/formula-uno_dnv6vt.png",
           categoria: "pelicula",
           precio: 4500,
+          stock: 10,
         },
       ]);
     }, 1000);
