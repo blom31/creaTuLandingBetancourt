@@ -1,10 +1,24 @@
 import { Plus } from "lucide-react";
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { CartContext } from "../../provider/CartProvider";
+import { ItemCount } from "../ItemCount/ItemCount";
 
 export function ItemDetail({ pelicula }) {
+  const [count, setCount] = useState(1);
+  const stock = pelicula.stock;
+
+  const handleRestar = () => {
+    if (count > 1) {
+      setCount(count - 1);
+    }
+  };
+
+  const handleSumar = () => {
+    if (count < stock) {
+      setCount(count + 1);
+    }
+  };
   const result = useContext(CartContext);
-  console.log("Objeto pelicula en ItemDetail:", pelicula);
   const handleOnAdd = () => {
     result.addItem(pelicula, 1);
   };
@@ -32,6 +46,15 @@ export function ItemDetail({ pelicula }) {
         <p>
           <strong>$:</strong> {pelicula.precio}
         </p>
+        <div>
+          <strong>Disponible:</strong> {pelicula.stock}{" "}
+          {pelicula.stock > 1 ? "entradas" : "entrada"}
+          <ItemCount
+            onSumar={handleSumar}
+            onRestar={handleRestar}
+            contador={count}
+          />
+        </div>
         <div className="item_actions">
           <button className="btn-primary">Comprar ahora</button>
           <button className="btn-primary" onClick={handleOnAdd}>

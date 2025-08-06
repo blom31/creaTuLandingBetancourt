@@ -9,15 +9,15 @@ import {
   where,
   query,
 } from "firebase/firestore";
-import { app } from "../../firebase/firebaseConfig"; // Import the Firestore database instance
+import { app } from "../../firebase/firebaseConfig";
 
 export function ItemListContainer({ greet }) {
   const { categoriaId } = useParams();
   const [peliculas, setPeliculas] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
+
   useEffect(() => {
-    console.log("categoriaId recibido:", categoriaId);
     setLoading(true);
     const db = getFirestore(app);
     const peliculasCollection = collection(db, "peliculas");
@@ -26,7 +26,7 @@ export function ItemListContainer({ greet }) {
     if (typeof categoriaId === "string" && categoriaId.length > 0) {
       q = query(peliculasCollection, where("categoria", "==", categoriaId));
     } else {
-      q = query(peliculasCollection); // Sin filtro
+      q = query(peliculasCollection);
     }
 
     const listaPeliculas = getDocs(q);
@@ -35,10 +35,8 @@ export function ItemListContainer({ greet }) {
       .then((respuesta) => {
         const peliculasListadas = [];
         respuesta.docs.forEach((pelicula) => {
-          console.log("Documento de película:", pelicula.id, pelicula.data());
           peliculasListadas.push({ id: pelicula.id, ...pelicula.data() });
         });
-        console.log("Películas listadas después de filtro:", peliculasListadas);
         setPeliculas(peliculasListadas);
       })
       .catch((error) => {
@@ -48,7 +46,7 @@ export function ItemListContainer({ greet }) {
         );
       })
       .finally(() => {
-        setLoading(false); // Indicamos que la carga ha terminado
+        setLoading(false);
       });
   }, [categoriaId]);
 
@@ -56,7 +54,6 @@ export function ItemListContainer({ greet }) {
     return <p>Cargando lista de películas / series...</p>;
   }
   if (error) {
-    // Si hay un error, lo mostramos al usuario
     return <p className="error-message">{error}</p>;
   }
 

@@ -1,6 +1,5 @@
 import { initializeApp } from "firebase/app";
-// ¡Necesitas importar getFirestore para interactuar con la base de datos!
-import { getFirestore } from "firebase/firestore"; // <-- ¡IMPORTANTE!
+import { getFirestore } from "firebase/firestore";
 
 const firebaseConfig = {
   apiKey: "AIzaSyCzq8_64Oidamlrf_1Ou8TOaRfz80aBhME",
