@@ -1,13 +1,22 @@
+import { Currency } from "lucide-react";
 import { Link } from "react-router-dom";
 
 export function Item({ pelicula }) {
   if (!pelicula) return <p>No se recibió ninguna película</p>;
 
   return (
-    <Link to={`/item/${pelicula.id}`} className="item">
+    <article className="item">
       <img className="item_img" src={pelicula.poster} alt={pelicula.title} />
-      <p className="title">{pelicula.title}</p>
-      <p className="title">{pelicula.precio}</p>
-    </Link>
+      <div>
+        <div className="title">{pelicula.title}</div>
+        <div className="title">
+          {Intl.NumberFormat("es-AR", {
+            style: "currency",
+            currency: "ARS",
+          }).format(pelicula.precio)}
+        </div>
+      </div>
+      <Link to={`/item/${pelicula.id}`}>Ver detalle</Link>
+    </article>
   );
 }

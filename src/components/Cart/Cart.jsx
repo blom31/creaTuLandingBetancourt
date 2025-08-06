@@ -9,10 +9,7 @@ export function Cart() {
       <h1>Tu Carrito</h1>
       {result.cart.map((pelicula) => (
         <div className="cart-item" key={pelicula.id}>
-          <img
-            src={`https://image.tmdb.org/t/p/w200${pelicula.poster_path}`}
-            alt={pelicula.title}
-          />
+          <img src={pelicula.poster} alt={pelicula.title} />
           <div className="cart-item-details">
             <h2>{pelicula.title}</h2>
             <p>Cantidad: {pelicula.quantity}</p>
