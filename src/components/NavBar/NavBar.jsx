@@ -23,7 +23,7 @@ export function NavBar() {
         <NavLink to="/uploader" className="menu_link">
           Uploader
         </NavLink>
-        <NavLink to="/ingresar" className="menu_link">
+        <NavLink to="/login" className="menu_link">
           👤Ingresar
         </NavLink>
         <CartWidget />
