@@ -14,6 +14,7 @@ export function Cart() {
           <div className="cart-item-details">
             <h2>{pelicula.title}</h2>
             <p>Cantidad: {pelicula.quantity}</p>
+
             <p>Precio unitario: ${pelicula.precio}</p>
             <p>Subtotal: ${pelicula.precio * pelicula.quantity}</p>
           </div>

@@ -8,7 +8,7 @@ import {
 import { auth, db } from "../../firebase/firebaseConfig";
 import { doc, setDoc, getDoc } from "firebase/firestore";
 
-export function Ingresar() {
+export function Login() {
   const [user, setUser] = useState(null);
   const [error, setError] = useState("");
 
