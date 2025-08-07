@@ -1,5 +1,6 @@
 import { useContext } from "react";
 import { CartContext } from "../../provider/CartProvider";
+import { CheckoutForm } from "../CheckoutForm/CheckoutForm";
 
 export function Cart() {
   const result = useContext(CartContext);
@@ -27,12 +28,10 @@ export function Cart() {
 
       <div className="cart-summary">
         <h3>Total de la compra: ${result.totalPrecio().toFixed(2)}</h3>
+        <CheckoutForm />
         <button onClick={() => result.clearCart()} className="button-secondary">
           Limpiar Carrito
         </button>
-        {/* <Link to="/checkout" className="button-primary">
-          Finalizar Compra
-        </Link> */}
       </div>
     </div>
   );
