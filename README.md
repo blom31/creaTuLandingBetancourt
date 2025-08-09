@@ -1,41 +1,38 @@
-# CineApp 🎬
+# 🎬 creaTuLandingBetancourt
 
-Aplicación web desarrollada en React para explorar, buscar y comprar entradas de películas y series. Incluye autenticación con Google, carrito de compras, integración con Firebase Firestore y carga de datos mockeados.
+Aplicación web desarrollada en React para explorar, buscar y comprar películas y series. Permite autenticación con Google, gestión de carrito, finalización de compra y almacenamiento de órdenes en Firebase Firestore.
 
 ## Características
 
-- Listado de películas y series con filtrado por categoría.
-- Detalle de cada película/serie.
-- Carrito de compras persistente.
-- Finalización de compra y generación de ticket.
-- Autenticación de usuarios con Google (Firebase Auth).
-- Carga de datos mockeados a Firestore (botón deshabilitado para evitar duplicados).
-- Estilos personalizados con SCSS y CSS.
-- Navegación SPA con React Router.
+- **Listado de películas y series** con filtrado por categoría.
+- **Detalle de cada película/serie**.
+- **Carrito de compras** persistente y gestión de productos.
+- **Finalización de compra** con generación de ticket y guardado en Firestore.
+- **Autenticación de usuarios con Google** (Firebase Auth).
+- **Carga de películas mockeadas** a Firestore (protegido para evitar duplicados).
+- **Notificaciones** con react-toastify.
+- **SPA** con React Router.
+- **Estilos personalizados** con CSS/SCSS.
 
 ## Estructura del proyecto
 
 ```
 src/
-  components/         # Componentes reutilizables (NavBar, Cart, Login, etc.)
-  css/                # CSS generado desde SCSS
-  scss/               # Archivos fuente SCSS (estilos)
-  firebase/           # Configuración e integración con Firebase
-  provider/           # Contexto global para el carrito
-  services/           # Servicios para consumir APIs externas
+  components/         # Componentes reutilizables (NavBar, Cart, Login, Checkout, etc.)
+  css/                # Estilos CSS
+  firebase/           # Configuración de Firebase
+  provider/           # Contexto global (Carrito)
   assets/             # Imágenes y recursos estáticos
 public/
-  vite.svg            # Ícono de la app
-index.html            # HTML principal
-vite.config.js        # Configuración de Vite
+  index.html
 ```
 
-## Instalación
+## Instalación y uso
 
 1. **Clona el repositorio:**
    ```sh
-   git clone https://github.com/tuusuario/cineapp.git
-   cd cineapp
+   git clone https://github.com/tuusuario/creaTuLandingBetancourt.git
+   cd creaTuLandingBetancourt
    ```
 
 2. **Instala las dependencias:**
@@ -43,38 +40,32 @@ vite.config.js        # Configuración de Vite
    npm install
    ```
 
-3. **Compila los estilos SCSS (opcional, si editas los .scss):**
-   ```sh
-   npm run sass
-   ```
-
-4. **Configura tu proyecto de Firebase:**
+3. **Configura Firebase:**
    - Crea un proyecto en [Firebase Console](https://console.firebase.google.com/).
    - Habilita Firestore y Authentication (Google).
-   - Copia tu configuración en `src/firebase/firebaseConfig.js` (ya hay una de ejemplo).
+   - Copia tu configuración en `src/firebase/firebaseConfig.js`.
 
-5. **Inicia la aplicación en modo desarrollo:**
+4. **Inicia la aplicación:**
    ```sh
    npm run dev
    ```
 
-6. **Abre en tu navegador:**  
-   [http://localhost:5173](http://localhost:5173) (o el puerto que indique la terminal).
+5. **Abre en tu navegador:**  
+   [http://localhost:5173](http://localhost:5173)
 
 ## Scripts disponibles
 
-- `npm run dev` – Inicia el servidor de desarrollo.
-- `npm run build` – Genera la versión de producción.
-- `npm run preview` – Previsualiza la build de producción.
-- `npm run lint` – Ejecuta ESLint.
-- `npm run sass` – Compila los archivos SCSS a CSS.
+- `npm run dev` – Servidor de desarrollo.
+- `npm run build` – Build de producción.
+- `npm run preview` – Previsualización de la build.
+- `npm run lint` – Linter.
 
 ## Dependencias principales
 
 - [React](https://react.dev/)
 - [React Router DOM](https://reactrouter.com/)
 - [Firebase](https://firebase.google.com/)
-- [Lucide React](https://lucide.dev/)
+- [React Toastify](https://fkhadra.github.io/react-toastify/)
 - [SweetAlert2](https://sweetalert2.github.io/)
 - [Vite](https://vitejs.dev/)
 
@@ -83,6 +74,7 @@ vite.config.js        # Configuración de Vite
 - El botón de carga de películas a Firestore está deshabilitado para evitar duplicados.
 - El login solo permite autenticación con Google.
 - El carrito y las órdenes se almacenan en Firestore bajo la colección `orders`.
+- Al finalizar la compra, se genera un ticket con el número de pedido.
 
 ## Autor
 
@@ -90,4 +82,4 @@ Desarrollado por Olga Betancourt.
 
 ---
 
-¡Gracias por visitar CineApp! Si tienes sugerencias o encuentras algún bug, no dudes en abrir un
+¡Gracias por visitar el proyecto! Si tienes sugerencias o encuentras algún bug, abre un issue o
