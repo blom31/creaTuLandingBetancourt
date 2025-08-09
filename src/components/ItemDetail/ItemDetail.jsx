@@ -24,7 +24,7 @@ export function ItemDetail({ pelicula }) {
   };
 
   return (
-    <div className="item_detail">
+    <section className="item_detail">
       <div className="item_img_container">
         <img
           src={pelicula.poster}
@@ -34,18 +34,26 @@ export function ItemDetail({ pelicula }) {
       </div>
       <div className="item_info">
         <h2>{pelicula.title}</h2>
-        <p>
-          <strong>Descripción:</strong> {pelicula.resumen || "No disponible."}
-        </p>
-        <p>
-          <strong>Fecha de estreno:</strong> {pelicula.release_date}
-        </p>
-        <p>
-          <strong>Categoría:</strong> {pelicula.categoria}
-        </p>
-        <p>
-          <strong>$:</strong> {pelicula.precio}
-        </p>
+        <div>
+          <p>
+            <strong>Descripción:</strong> {pelicula.resumen || "No disponible."}
+          </p>
+          <div className="item-date">
+            <p>
+              <strong>Fecha de estreno:</strong> {pelicula.release_date}
+            </p>
+            <p>
+              <strong>Categoría:</strong> {pelicula.categoria}
+            </p>
+            <p>
+              <strong>Precio:</strong>{" "}
+              {Intl.NumberFormat("es-AR", {
+                style: "currency",
+                currency: "ARS",
+              }).format(pelicula.precio)}
+            </p>
+          </div>
+        </div>
         <div>
           <strong>Disponible:</strong> {pelicula.stock}{" "}
           {pelicula.stock > 1 ? "entradas" : "entrada"}
@@ -58,11 +66,10 @@ export function ItemDetail({ pelicula }) {
         <div className="item_actions">
           <button className="btn-primary">Comprar ahora</button>
           <button className="btn-primary" onClick={handleOnAdd}>
-            <Plus />
             Agregar al carrito
           </button>
         </div>
       </div>
-    </div>
+    </section>
   );
 }

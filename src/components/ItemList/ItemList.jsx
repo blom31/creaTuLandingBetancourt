@@ -10,7 +10,7 @@ export function ItemList({ peliculas, greet }) {
   }
 
   return (
-    <div className="container">
+    <section className="container">
       <div className="saludo">
         <h1>{greet}</h1>
         <div className="buscar">
@@ -23,6 +23,6 @@ export function ItemList({ peliculas, greet }) {
           <Item key={pelicula.id} pelicula={pelicula} />
         ))}
       </article>
-    </div>
+    </section>
   );
 }

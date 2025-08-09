@@ -19,7 +19,8 @@ h3 {
   font-size: 1.6rem;
   color: v.$text-primary;
 }
-.btn-primary {
+.btn-primary,
+.btn-secondary {
   background-color: v.$btn-primary-bg;
   color: v.$btn-primary-text;
   border: none;
@@ -27,4 +28,11 @@ h3 {
   border-radius: 5px;
   cursor: pointer;
   font-size: 1rem;
+}
+.btn-secondary {
+  background-color: v.$btn-secondary-bg;
+  color: v.$bg-color;
+  font-size: 1rem;
+  font-weight: 900;
+  margin: 1em;
 }

@@ -5,13 +5,11 @@ import { doc, setDoc } from "firebase/firestore";
 import { Checkout } from "../Checkout/Checkout";
 
 export function CheckoutForm() {
-  const [telefono, setTelefono] = useState("");
-  const [order, setOrder] = useState(null); // Nuevo estado para guardar el ID de la orden
+  const [order, setOrder] = useState(null);
   const cartContext = useContext(CartContext);
 
   const handleSubmit = async (event) => {
-    event.preventDefault(); // Evitamos que el formulario recargue la página
-
+    event.preventDefault();
     const user = auth.currentUser;
 
     if (!user) {
@@ -29,7 +27,6 @@ export function CheckoutForm() {
         uid: user.uid,
         email: user.email,
         displayName: user.displayName,
-        telefono: telefono,
       },
       items: cartContext.cart,
       total: cartContext.totalPrecio(),
@@ -52,22 +49,15 @@ export function CheckoutForm() {
     }
   };
 
-  // Renderizado condicional: si hay un orderId, mostramos el ticket
   if (order) {
     return <Checkout orderId={order.orderId} newOrder={order} />;
   }
 
   return (
-    <form onSubmit={handleSubmit}>
-      <label htmlFor="telefono">Teléfono:</label>
-      <input
-        type="text"
-        name="telefono"
-        value={telefono}
-        onChange={(e) => setTelefono(e.target.value)}
-        required
-      />
-      <button type="submit">Finalizar Compra</button>
-    </form>
+    <div className="cart_final">
+      <button className="btn-primary" onClick={handleSubmit}>
+        Finalizar Compra
+      </button>
+    </div>
   );
 }

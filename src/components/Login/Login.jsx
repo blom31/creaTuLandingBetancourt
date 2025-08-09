@@ -61,31 +61,31 @@ export function Login() {
   };
 
   return (
-    <div style={{ padding: "20px", maxWidth: "400px", margin: "auto" }}>
-      <h1>Autenticación de Usuario (Google)</h1>
+    <section
+      className="login_container"
+      style={{ padding: "20px", maxWidth: "400px", margin: "auto" }}
+    >
+      <h1>Inicia Sesión con Google</h1>
 
       {error && <p style={{ color: "red" }}>{error}</p>}
 
       {user ? (
         // UI para usuario autenticado
         <div>
-          <img
-            src={user.photoURL}
-            alt="User profile"
-            style={{ width: "50px", borderRadius: "50%" }}
-          />
           <h3>Bienvenido, {user.displayName || user.email}</h3>
 
-          <button onClick={handleSignOut}>Cerrar Sesión</button>
+          <button className="btn-primary" onClick={handleSignOut}>
+            Cerrar Sesión
+          </button>
         </div>
       ) : (
         // UI para usuario no autenticado
         <div>
-          <button type="button" onClick={handleSignIn}>
+          <button className="btn-primary" type="button" onClick={handleSignIn}>
             Iniciar Sesión con Google
           </button>
         </div>
       )}
-    </div>
+    </section>
   );
 }

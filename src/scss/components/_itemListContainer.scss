@@ -32,7 +32,7 @@
 .item {
   @include utils.tarjeta(250px, 450px);
   text-align: center;
-  margin: 10px;
+  margin: 15px;
   text-decoration: none;
 }
 .item_img {
@@ -42,5 +42,17 @@
 }
 .title {
   color: utils.$text-primary;
-  font-size: 1.5em;
+  font-size: 1.4em;
+}
+.loading {
+  color: utils.$text-fourth;
+}
+.price {
+  color: utils.$text-primary;
+  font-size: 1.3em;
+}
+.detalle {
+  color: utils.$text-fourth;
+  text-decoration: none;
+  font-size: 1.2em;
 }

@@ -1,0 +1,7 @@
+@use "../utilities/utilities" as utils;
+
+.login_container {
+  @include utils.flex(flex, center, center, 0, 0);
+  flex-direction: column;
+  height: 70vh;
+}
