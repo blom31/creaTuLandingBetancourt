@@ -10,9 +10,13 @@ export function ItemCount({ onSumar, onRestar, contador }) {
   return (
     <div className="count_container">
       <div className="controls">
-        <button onClick={handleDed}>-</button>
+        <button className="btn-secondary" onClick={handleDed}>
+          -
+        </button>
         <span className="count"> {contador}</span>
-        <button onClick={handleAdd}>+</button>
+        <button className="btn-secondary" onClick={handleAdd}>
+          +
+        </button>
       </div>
     </div>
   );

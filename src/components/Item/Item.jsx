@@ -9,14 +9,16 @@ export function Item({ pelicula }) {
       <img className="item_img" src={pelicula.poster} alt={pelicula.title} />
       <div>
         <div className="title">{pelicula.title}</div>
-        <div className="title">
+        <div className="price">
           {Intl.NumberFormat("es-AR", {
             style: "currency",
             currency: "ARS",
           }).format(pelicula.precio)}
         </div>
       </div>
-      <Link to={`/item/${pelicula.id}`}>Ver detalle</Link>
+      <Link to={`/item/${pelicula.id}`} className="detalle">
+        Ver detalle
+      </Link>
     </article>
   );
 }

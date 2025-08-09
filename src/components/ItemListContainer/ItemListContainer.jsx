@@ -51,7 +51,7 @@ export function ItemListContainer({ greet }) {
   }, [categoriaId]);
 
   if (loading) {
-    return <p>Cargando lista de películas / series...</p>;
+    return <p className="loading">Cargando lista de películas / series...</p>;
   }
   if (error) {
     return <p className="error-message">{error}</p>;

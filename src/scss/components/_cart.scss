@@ -1,0 +1,67 @@
+@use "../utilities/utilities" as utils;
+
+.cart_widget {
+  color: utils.$text-secondary;
+  text-decoration: none;
+}
+.cart_item_count {
+  font-size: 1em;
+  margin-left: 0.3em;
+}
+.cart_container {
+  @include utils.flex(flex, center, center, 0, 0);
+  width: 100%;
+  height: 89vh;
+  flex-direction: column;
+}
+.cart {
+  @include utils.flex(flex, space-between, center, 0, 0);
+  width: 90%;
+}
+.cart_info {
+  @include utils.flex(flex, space-around, center, 1em, 0);
+  flex-direction: column;
+  width: 60%;
+}
+.cart_item {
+  @include utils.flex(flex, space-between, center, 0, 0);
+  width: 100%;
+  margin: 15px;
+}
+.cart_img_container {
+  @include utils.flex(flex, center, center, 0, 0);
+  width: 30%;
+}
+.cart_detail_img {
+  @include utils.img(80%, 80%, cover, none, 0);
+  border: solid 5px utils.$text-accent;
+  border-radius: 5px;
+}
+.cart_item_details {
+  @include utils.flex(flex, space-around, center, 0, 0);
+  flex-direction: column;
+  width: 60%;
+}
+.cart_detail {
+  @include utils.flex(flex, space-around, center, 0, 0);
+  width: 100%;
+  color: utils.$text-primary;
+  font-size: 1.2em;
+}
+
+.cart_summary {
+  @include utils.flex(flex, flex-start, center, 0, 0);
+  flex-direction: column;
+  height: 20em;
+}
+.cart_total {
+  display: flex;
+  align-items: flex-start;
+}
+.cart_final {
+  height: 5em;
+}
+.ticket {
+  text-align: center;
+  padding: 20px;
+}
