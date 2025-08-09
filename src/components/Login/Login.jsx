@@ -7,10 +7,10 @@ import {
 } from "firebase/auth";
 import { auth, db } from "../../firebase/firebaseConfig";
 import { doc, setDoc, getDoc } from "firebase/firestore";
+import { toast } from "react-toastify";
 
 export function Login() {
   const [user, setUser] = useState(null);
-  const [error, setError] = useState("");
 
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
@@ -22,7 +22,6 @@ export function Login() {
 
   // --- Nueva función para iniciar sesión con Google ---
   const handleSignIn = async () => {
-    setError("");
     const provider = new GoogleAuthProvider();
     try {
       // 1. Iniciar sesión con una ventana emergente de Google
@@ -44,30 +43,37 @@ export function Login() {
         });
       }
 
-      alert("¡Inicio de sesión con Google exitoso!");
+      toast.success(`¡Bienvenido, ${user.displayName}!`, {
+        position: "top-center",
+        autoClose: 3000,
+      });
     } catch (err) {
-      console.error(err);
-      setError("Error al iniciar sesión con Google: " + err.message);
+      toast.error("Error al iniciar sesión: " + err.message, {
+        position: "bottom-center",
+        autoClose: 5000,
+      });
     }
   };
   // Función para cerrar la sesión del usuario
   const handleSignOut = async () => {
     try {
       await signOut(auth);
+      toast.info("Has cerrado la sesión.", {
+        position: "top-center",
+        autoClose: 3000,
+      });
     } catch (err) {
       console.error(err);
-      setError("Error al cerrar sesión: " + err.message);
+      toast.error("Error al cerrar sesión: " + err.message, {
+        position: "bottom-center",
+        autoClose: 5000,
+      });
     }
   };
 
   return (
-    <section
-      className="login_container"
-      style={{ padding: "20px", maxWidth: "400px", margin: "auto" }}
-    >
+    <section className="login_container">
       <h1>Inicia Sesión con Google</h1>
-
-      {error && <p style={{ color: "red" }}>{error}</p>}
 
       {user ? (
         // UI para usuario autenticado

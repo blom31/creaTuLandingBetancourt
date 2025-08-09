@@ -1,5 +1,6 @@
 import { createContext } from "react";
 import { useState } from "react";
+import { toast } from "react-toastify";
 
 export const CartContext = createContext();
 
@@ -18,16 +19,23 @@ export function CustomCartProvider({ children }) {
           return peli;
         })
       );
+      toast.info(`Se agregó ${quantity} unidades más de ${item.title}`);
     } else {
       setCart([...cart, { ...item, quantity }]);
+      toast.success(`Se agregó ${item.title} al carrito`);
     }
   };
 
   const removeItem = (id) => {
     setCart(cart.filter((item) => item.id !== id));
+    const removedItem = cart.find((item) => item.id === id);
+    if (removedItem) {
+      toast.error(`Se eliminó ${removedItem.title} del carrito`); // Notificación
+    }
   };
   const clearCart = () => {
     setCart([]);
+    toast.warn("Se vació el carrito");
   };
   const isInCart = (id) => {
     return cart.some((item) => item.id === id);
