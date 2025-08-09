@@ -92,7 +92,6 @@ h3 {
   margin: 0;
   padding: 0;
   width: 100%;
-  height: 89vh;
   flex-direction: column;
 }
 
@@ -186,7 +185,7 @@ h3 {
 
 .ticket {
   text-align: center;
-  padding: 20px;
+  padding: 5px;
 }
 
 .item_list_container {

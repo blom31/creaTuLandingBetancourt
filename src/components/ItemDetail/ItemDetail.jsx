@@ -64,7 +64,7 @@ export function ItemDetail({ pelicula }) {
           />
         </div>
         <div className="item_actions">
-          <button className="btn-primary">Comprar ahora</button>
+          {/* <button className="btn-primary">Comprar ahora</button> */}
           <button className="btn-primary" onClick={handleOnAdd}>
             Agregar al carrito
           </button>
