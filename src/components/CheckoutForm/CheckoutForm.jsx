@@ -3,6 +3,7 @@ import { CartContext } from "../../provider/CartProvider";
 import { auth, db } from "../../firebase/firebaseConfig";
 import { doc, setDoc } from "firebase/firestore";
 import { Checkout } from "../Checkout/Checkout";
+import { toast } from "react-toastify";
 
 export function CheckoutForm() {
   const [order, setOrder] = useState(null);
@@ -13,12 +14,12 @@ export function CheckoutForm() {
     const user = auth.currentUser;
 
     if (!user) {
-      alert("Debes iniciar sesión para finalizar la compra.");
+      toast.warn("Debes iniciar sesión para finalizar la compra.");
       return;
     }
 
     if (cartContext.cart.length === 0) {
-      alert("El carrito está vacío. Agrega películas para continuar.");
+      toast.info("El carrito está vacío. Agrega películas para continuar.");
       return;
     }
 
@@ -39,13 +40,12 @@ export function CheckoutForm() {
 
       setOrder({ ...newOrder, orderId: newOrderRef.id });
       cartContext.clearCart();
-
-      console.log();
-      `¡Compra realizada con éxito! Tu número de ticket es: ${newOrderRef.id}`;
+      toast.success(
+        `¡Compra realizada! Tu número de pedido es: ${newOrderRef.id}`
+      );
     } catch (error) {
       console.error("Error al guardar la orden:", error);
-      console.log();
-      ("Hubo un error al procesar tu compra. Inténtalo de nuevo.");
+      toast.error("Hubo un error al procesar tu compra. Inténtalo de nuevo.");
     }
   };
 
