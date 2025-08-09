@@ -43,7 +43,7 @@ export function ItemDetailContainer() {
   }, [itemId]);
 
   if (loading) {
-    return <p>Cargando detalle de película...</p>;
+    return <p className="loading">Cargando detalle de película...</p>;
   }
 
   if (error) {

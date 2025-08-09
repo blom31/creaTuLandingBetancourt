@@ -1,0 +1,11 @@
+@use "../utilities/utilities" as utils;
+
+.uploader_container {
+  @include utils.flex(flex, center, center, 0, 0);
+  flex-direction: column;
+  width: 100%;
+}
+.uploaderInfo {
+  color: utils.$text-primary;
+  font-size: 1.3em;
+}
