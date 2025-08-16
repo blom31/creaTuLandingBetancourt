@@ -1,12 +1,72 @@
 # React + Vite
+# 🛍️ E-commerce React - Proyecto Inicial
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Este proyecto es parte de mi aprendizaje de **ReactJS**. Aquí construyo los primeros componentes de un e-commerce utilizando la estructura básica de React.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🚀 Objetivos del proyecto
 
-## Expanding the ESLint configuration
+- Comprender la estructura de componentes en React.
+- Utilizar props para enviar datos entre componentes.
+- Comenzar a construir la base para una aplicación de tienda online.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+---
+
+## 🧱 Componentes creados
+
+### 🔹 `NavBar`
+Contiene:
+- Logo de la tienda
+- Enlaces de navegación (`Inicio`, `Películas`, `Series`, `Ingresar`)
+- Componente `CartWidget` integrado
+
+### 🔹 `CartWidget`
+Muestra un ícono de carrito (🛒) con una cantidad fija (3).
+
+### 🔹 `ItemListContainer`
+Recibe un mensaje a través de props (`greeting`) y lo muestra como bienvenida al usuario y
+se simula una contenedor de productos (`Películas`)
+
+---
+
+## 📁 Estructura del proyecto
+src/
+
+├── components/
+
+    ├── CartWidget/
+      └──CartWidget.jsx
+    ├──Footer/
+       └──Footer.jsx
+    ├── Item/
+        └──Item.jsx
+    ├── ItemDetail/
+        └──ItemDetail.jsx
+    ├── ItemDetailContainer/
+        └──ItemDetailContainer.jsx
+    ├── ItemList/
+        └──ItemList.jsx
+    ├── ItemListContainer/
+        └──ItemListContainer.jsx
+    ├── NavBar/
+        └──NavBar.jsx
+├── App.jsx
+
+└── main.jsx
+
+
+
+## 🛠️ Tecnologías utilizadas
+
+- React
+- JavaScript
+- Vite
+- HTML / CSS
+- Sass
+
+  ## ✨ Autor
+
+**Olga Betancourt**  
+Proyecto educativo - ReactJS - 2025
+
