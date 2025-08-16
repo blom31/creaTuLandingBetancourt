@@ -1,50 +1,40 @@
-import { createContext } from "react";
-import { useState } from "react";
-import { toast } from "react-toastify";
+import { createContext, useState } from "react"; // Importamos createContext para crear el contexto global del carrito
+import {
+  addItemToCart,
+  removeItemFromCart,
+  isInCart as checkIsInCart,
+  totalItems,
+  totalPrecio,
+} from "../components/Cart/CartUtils";
+import { toast } from "react-toastify"; // Importamos toast para mostrar notificaciones al usuario
 
-export const CartContext = createContext();
+export const CartContext = createContext(); // Creamos el contexto del carrito, que será compartido entre componentes
 
-const CartProvider = CartContext.Provider;
+const CartProvider = CartContext.Provider; // Extraemos el componente Provider del contexto
 
 export function CustomCartProvider({ children }) {
   const [cart, setCart] = useState([]);
 
   const addItem = (item, quantity) => {
-    if (isInCart(item.id)) {
-      setCart(
-        cart.map((peli) => {
-          if (peli.id === item.id) {
-            return { ...peli, quantity: peli.quantity + quantity };
-          }
-          return peli;
-        })
-      );
-      toast.info(`Se agregó ${quantity} unidades más de ${item.title}`);
-    } else {
-      setCart([...cart, { ...item, quantity }]);
-      toast.success(`Se agregó ${item.title} al carrito`);
-    }
+    const updatedCart = addItemToCart(cart, item, quantity);
+    setCart(updatedCart);
+
+    const message = checkIsInCart(cart, item.id)
+      ? `Se agregó ${quantity} unidades más de ${item.title}`
+      : `Se agregó ${item.title} al carrito`;
+
+    toast[checkIsInCart(cart, item.id) ? "info" : "success"](message);
   };
 
   const removeItem = (id) => {
-    setCart(cart.filter((item) => item.id !== id));
     const removedItem = cart.find((item) => item.id === id);
-    if (removedItem) {
-      toast.error(`Se eliminó ${removedItem.title} del carrito`); // Notificación
-    }
+    setCart(removeItemFromCart(cart, id));
+    if (removedItem) toast.error(`Se eliminó ${removedItem.title} del carrito`);
   };
+
   const clearCart = () => {
     setCart([]);
     toast.warn("Se vació el carrito");
-  };
-  const isInCart = (id) => {
-    return cart.some((item) => item.id === id);
-  };
-  const totalItems = () => {
-    return cart.reduce((acc, item) => acc + item.quantity, 0);
-  };
-  const totalPrecio = () => {
-    return cart.reduce((acc, item) => acc + item.precio * item.quantity, 0);
   };
 
   return (
@@ -54,9 +44,9 @@ export function CustomCartProvider({ children }) {
         addItem,
         removeItem,
         clearCart,
-        isInCart,
-        totalItems,
-        totalPrecio,
+        isInCart: (id) => checkIsInCart(cart, id),
+        totalItems: () => totalItems(cart),
+        totalPrecio: () => totalPrecio(cart),
       }}
     >
       {children}
