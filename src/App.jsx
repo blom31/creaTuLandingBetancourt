@@ -15,6 +15,7 @@ function App() {
   return (
     <>
       <NavBar />
+      {/* Definición de rutas de la aplicación */}
       <Routes>
         <Route path="/" element={<ItemListContainer greet={saludar} />} />
         <Route
@@ -28,6 +29,7 @@ function App() {
         <Route path="*" element={<h1>404 Not Found</h1>} />
       </Routes>
       <Footer />
+      {/* Componente para mostrar notificaciones */}
       <ToastContainer />
     </>
   );
