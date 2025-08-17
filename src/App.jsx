@@ -5,14 +5,17 @@ import { ItemDetailContainer } from "./components/ItemDetailContainer/ItemDetail
 import { Cart } from "./components/Cart/Cart.jsx";
 import { Footer } from "./components/Footer/Footer.jsx";
 import { FilmUploader } from "./components/FilmUpLoader/FilmUploader.jsx";
-import "./css/styles.css";
 import { Login } from "./components/Login/Login.jsx";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import "./css/styles.css";
 
 function App() {
   const saludar = "¡Explora nuestra colección de películas y series.!";
   return (
     <>
       <NavBar />
+      {/* Definición de rutas de la aplicación */}
       <Routes>
         <Route path="/" element={<ItemListContainer greet={saludar} />} />
         <Route
@@ -26,6 +29,8 @@ function App() {
         <Route path="*" element={<h1>404 Not Found</h1>} />
       </Routes>
       <Footer />
+      {/* Componente para mostrar notificaciones */}
+      <ToastContainer />
     </>
   );
 }

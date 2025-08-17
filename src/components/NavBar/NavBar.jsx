@@ -1,5 +1,5 @@
 import { NavLink } from "react-router-dom";
-import { CartWidget } from "../CartWidget/CartWidget";
+import { CartWidget } from "../Cart/CartWidget/CartWidget";
 
 export function NavBar() {
   return (
@@ -26,6 +26,7 @@ export function NavBar() {
         <NavLink to="/login" className="menu_link">
           👤Ingresar
         </NavLink>
+        {/* Componente ícono del cart */}
         <CartWidget />
       </nav>
     </>
