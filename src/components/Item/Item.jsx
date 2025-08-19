@@ -1,7 +1,7 @@
-import { Currency } from "lucide-react";
 import { Link } from "react-router-dom";
 
 export function Item({ pelicula }) {
+  //Verifica que la película recibida tenga datos
   if (!pelicula) return <p>No se recibió ninguna película</p>;
 
   return (
@@ -10,6 +10,7 @@ export function Item({ pelicula }) {
       <div>
         <div className="title">{pelicula.title}</div>
         <div className="price">
+          {/* Precio formateado en moneda argentina */}
           {Intl.NumberFormat("es-AR", {
             style: "currency",
             currency: "ARS",
