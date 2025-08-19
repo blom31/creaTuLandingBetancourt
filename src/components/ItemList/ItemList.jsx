@@ -1,5 +1,6 @@
 import { Item } from "../Item/Item";
 
+//Es un componente Dummy
 export function ItemList({ peliculas, greet }) {
   if (!peliculas || peliculas.length === 0) {
     return (

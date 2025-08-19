@@ -1,51 +1,52 @@
 import { useState, useContext } from "react";
 import { CartContext } from "../../provider/CartProvider";
-import { auth, db } from "../../firebase/firebaseConfig";
-import { doc, setDoc } from "firebase/firestore";
+import { auth } from "../../firebase/firebaseConfig";
 import { Checkout } from "../Checkout/Checkout";
+import {
+  createOrderObject,
+  saveOrderToFirestore,
+} from "../../services/orderService";
+import { isUserLoggedIn, isCartEmpty } from "../../services/orderValidation";
 import { toast } from "react-toastify";
 
 export function CheckoutForm() {
   const [order, setOrder] = useState(null);
+  const [isLoading, setIsLoading] = useState(false);
   const cartContext = useContext(CartContext);
 
+  // Se ejecuta al hacer clic en "Finalizar Compra"
   const handleSubmit = async (event) => {
     event.preventDefault();
-    const user = auth.currentUser;
+    const user = auth.currentUser; // Obtenemos el usuario actual
 
-    if (!user) {
+    if (!isUserLoggedIn(user)) {
       toast.warn("Debes iniciar sesión para finalizar la compra.");
       return;
     }
-
-    if (cartContext.cart.length === 0) {
+    // Validamos si el carrito está vacío
+    if (isCartEmpty(cartContext.cart)) {
       toast.info("El carrito está vacío. Agrega películas para continuar.");
       return;
     }
+    setIsLoading(true); // Activamos el estado de carga
 
-    const newOrder = {
-      buyer: {
-        uid: user.uid,
-        email: user.email,
-        displayName: user.displayName,
-      },
-      items: cartContext.cart,
-      total: cartContext.totalPrecio(),
-      createdAt: new Date(),
-    };
+    // Creamos el objeto de orden con los datos del usuario y del carrito
+    const newOrder = createOrderObject(
+      user,
+      cartContext.cart,
+      cartContext.totalPrecio()
+    );
 
     try {
-      const newOrderRef = doc(db, "orders", new Date().getTime().toString());
-      await setDoc(newOrderRef, newOrder);
-
-      setOrder({ ...newOrder, orderId: newOrderRef.id });
+      const orderId = await saveOrderToFirestore(newOrder);
+      setOrder({ ...newOrder, orderId });
       cartContext.clearCart();
-      toast.success(
-        `¡Compra realizada! Tu número de pedido es: ${newOrderRef.id}`
-      );
+      toast.success(`¡Compra realizada! Tu número de pedido es: ${orderId}`);
     } catch (error) {
       console.error("Error al guardar la orden:", error);
       toast.error("Hubo un error al procesar tu compra. Inténtalo de nuevo.");
+    } finally {
+      setIsLoading(false);
     }
   };
 
@@ -55,8 +56,13 @@ export function CheckoutForm() {
 
   return (
     <div className="cart_final">
-      <button className="btn-primary" onClick={handleSubmit}>
-        Finalizar Compra
+      <button
+        className="btn-primary"
+        onClick={handleSubmit}
+        disabled={isLoading}
+        aria-label="Finalizar compra"
+      >
+        {isLoading ? "Procesando..." : "Finalizar Compra"}
       </button>
     </div>
   );

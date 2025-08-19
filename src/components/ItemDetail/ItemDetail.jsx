@@ -1,24 +1,28 @@
-import { Plus } from "lucide-react";
 import { useContext, useState } from "react";
 import { CartContext } from "../../provider/CartProvider";
 import { ItemCount } from "../ItemCount/ItemCount";
 
 export function ItemDetail({ pelicula }) {
+  // Estado local para controlar la cantidad seleccionada
   const [count, setCount] = useState(1);
   const stock = pelicula.stock;
 
+  // Función para disminuir la cantidad, sin bajar de 1
   const handleRestar = () => {
     if (count > 1) {
       setCount(count - 1);
     }
   };
 
+  // Función para aumentar la cantidad, sin superar el stock
   const handleSumar = () => {
     if (count < stock) {
       setCount(count + 1);
     }
   };
+  // Accede al contexto del carrito para usar sus funciones
   const result = useContext(CartContext);
+  // Función que agrega la película al carrito con la cantidad seleccionada
   const handleOnAdd = () => {
     result.addItem(pelicula, 1);
   };
