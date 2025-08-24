@@ -1,0 +1,82 @@
+@use "../../scss/utilities/utilities" as utils;
+
+.menu {
+  @include utils.flex(flex, space-between, center, 0, 1rem 1.5rem);
+  list-style: none;
+  font-size: 1.1em;
+  border-bottom: solid 1px utils.$text-primary;
+}
+
+.menuLogo {
+  color: utils.$text-accent;
+  font-size: 1.5em;
+  text-decoration: none;
+}
+.menuLink {
+  color: utils.$text-tertiary;
+  text-decoration: none;
+}
+.menuLink:hover {
+  color: utils.$text-secondary;
+}
+.menuInicio {
+  color: utils.$text-secondary;
+  font-size: 1.5em;
+  text-decoration: none;
+}
+.menuInicio:hover {
+  color: utils.$text-tertiary;
+}
+.hamburger {
+  display: none;
+}
+.bar {
+  display: block;
+  width: 25px;
+  height: 3px;
+  margin: 5px auto;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  background-color: #0eca18;
+}
+.navMenu {
+  @include utils.flex(flex, space-between, center, 0, 0);
+  width: 60%;
+}
+@media only screen and (max-width: 768px) {
+  .navMenu {
+    position: fixed;
+    left: -100%;
+    top: 5rem;
+    flex-direction: column;
+    width: 95%;
+    border-radius: 10px;
+    text-align: center;
+    transition: 1s;
+    box-shadow: 0 10px 27px rgba(76, 162, 11, 0.05);
+    background-color: utils.$bg-color;
+  }
+
+  .navMenu.active {
+    left: 10px;
+  }
+
+  .navItem {
+    margin: 2.5rem 0;
+  }
+
+  .hamburger {
+    display: block;
+    cursor: pointer;
+  }
+
+  .hamburger.active .bar:nth-child(1) {
+    -webkit-transform: translateY(8px) rotate(45deg);
+    transform: translateY(8px) rotate(45deg);
+  }
+
+  .hamburger.active .bar:nth-child(3) {
+    -webkit-transform: translateY(-8px) rotate(-45deg);
+    transform: translateY(-8px) rotate(-45deg);
+  }
+}

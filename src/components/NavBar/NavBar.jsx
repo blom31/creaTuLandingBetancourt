@@ -1,33 +1,59 @@
 import { NavLink } from "react-router-dom";
 import { CartWidget } from "../Cart/CartWidget/CartWidget";
+import { useMenuToggle } from "./Hooks/useMenuToggle";
+import styles from "./NavBar.module.scss";
 
 export function NavBar() {
+  const { isActive, toggleMenu, closeMenu } = useMenuToggle();
   return (
     <>
-      <nav className="menu">
-        <NavLink to="/">
-          <img
-            className="menu_img"
-            src="https://res.cloudinary.com/dv9yjyclh/image/upload/v1750554951/entrada_ufzx1i.png"
-          />
+      <nav className={styles.menu}>
+        <NavLink to="/" className={styles.menuLogo}>
+          CineApp
         </NavLink>
-        <NavLink to="/" className="menu_inicio">
-          Inicio
-        </NavLink>
-        <NavLink to="/categoria/pelicula" className="menu_link">
-          Películas
-        </NavLink>
-        <NavLink to="/categoria/series" className="menu_link">
-          Series
-        </NavLink>
-        <NavLink to="/uploader" className="menu_link">
-          Uploader
-        </NavLink>
-        <NavLink to="/login" className="menu_link">
-          👤Ingresar
-        </NavLink>
-        {/* Componente ícono del cart */}
+        <div className={`${styles.navMenu} ${isActive ? styles.active : ""}`}>
+          <NavLink to="/" className={styles.menuInicio} onClick={closeMenu}>
+            Inicio
+          </NavLink>
+          <NavLink
+            to="/categoria/pelicula"
+            className={styles.menuInicio}
+            onClick={closeMenu}
+          >
+            Películas
+          </NavLink>
+          <NavLink
+            to="/categoria/series"
+            className={styles.menuInicio}
+            onClick={closeMenu}
+          >
+            Series
+          </NavLink>
+          <NavLink
+            to="/uploader"
+            className={styles.menuInicio}
+            onClick={closeMenu}
+          >
+            Uploader
+          </NavLink>
+          <NavLink
+            to="/login"
+            className={styles.menuInicio}
+            onClick={closeMenu}
+          >
+            👤Ingresar
+          </NavLink>
+          {/* Componente ícono del cart */}
+        </div>
         <CartWidget />
+        <div
+          className={`${styles.hamburger} ${isActive ? styles.active : ""}`}
+          onClick={toggleMenu}
+        >
+          <span className={styles.bar}></span>
+          <span className={styles.bar}></span>
+          <span className={styles.bar}></span>
+        </div>
       </nav>
     </>
   );
